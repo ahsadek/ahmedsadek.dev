@@ -22,7 +22,7 @@ const MAX_DISPLAY = 5;
 export default function Home({ posts }) {
   return (
     <div className="relative">
-      <Snowfall
+      {/* <Snowfall
         snowflakeCount={60}
         style={{
           zIndex: -1,
@@ -30,7 +30,7 @@ export default function Home({ posts }) {
           height: '100vh',
           position: 'fixed',
         }}
-      />
+      /> */}
 
       {/* Introduce myself */}
       <div className="mt-8 dark:divide-gray-700 md:mt-8">

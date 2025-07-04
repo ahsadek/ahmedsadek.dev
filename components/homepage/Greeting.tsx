@@ -8,7 +8,7 @@ const Greeting = () => {
 
   return (
     <div className={className}>
-      Hello, folks! <span className="font-bold">Discover my stories and creative ideas.</span>
+      Hello, <span className="font-bold">welcome to my portfolio!</span>
     </div>
   );
 };

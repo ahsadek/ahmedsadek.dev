@@ -89,7 +89,6 @@ SET available = available - 1,
 WHERE room_type = 'Deluxe'
   AND version = :old_version
   AND available > 0;
-
 ```
 
 - If **one row** is updated, everything is fine (no conflict).
