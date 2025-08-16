@@ -33,7 +33,7 @@ export default function Home({ posts }) {
       /> */}
 
       {/* Introduce myself */}
-      <div className="mt-8 dark:divide-gray-700 md:mt-8">
+      <div className="mt-8 dark:divide-gray-700 md:mt-24">
         <Greeting />
         <div className="flex flex-col justify-between md:my-4 md:pb-8 xl:flex-row">
           <Avatar />

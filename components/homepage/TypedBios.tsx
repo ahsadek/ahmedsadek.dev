@@ -23,7 +23,7 @@ const TypedBios = () => {
     <div>
       <ul id="bios" className="hidden">
         <li>
-          I am studying <b className="font-medium">Robotics Engineering</b> part time.
+          I study <b className="font-medium">Robotics Engineering</b> part time.
         </li>
         <li>
           I currently live in <b className="font-medium">Montreal, Canada</b>.
