@@ -9,22 +9,43 @@ import headerNavLinks from '@/data/headerNavLinks';
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
   const navRef = useRef(null);
+  const scrollPositionRef = useRef(0);
 
   const onToggleNav = () => {
     setNavShow((status) => {
       if (status) {
-        enableBodyScroll(navRef.current);
+        // Restore scroll position and enable body scroll
+        if (navRef.current) {
+          enableBodyScroll(navRef.current);
+        } else {
+          clearAllBodyScrollLocks();
+        }
+        window.scrollTo(0, scrollPositionRef.current);
       } else {
-        // Prevent scrolling
-        disableBodyScroll(navRef.current);
+        // Store current scroll position and prevent scrolling
+        scrollPositionRef.current = window.scrollY;
+        // Use document.body as fallback if navRef is not available
+        const targetElement = navRef.current || document.body;
+        try {
+          disableBodyScroll(targetElement, {
+            reserveScrollBarGap: true,
+          });
+        } catch (error) {
+          // Fallback: just prevent scrolling using CSS
+          document.body.style.overflow = 'hidden';
+        }
       }
       return !status;
     });
   };
 
   useEffect(() => {
-    return clearAllBodyScrollLocks;
-  });
+    return () => {
+      clearAllBodyScrollLocks();
+      // Ensure body scroll is restored on unmount
+      document.body.style.overflow = '';
+    };
+  }, []);
 
   return (
     <>
@@ -42,8 +63,8 @@ const MobileNav = () => {
           />
         </svg>
       </button>
-      <Transition appear show={navShow} as={Fragment} unmount={false}>
-        <Dialog as="div" onClose={onToggleNav} unmount={false}>
+      <Transition appear show={navShow} as={Fragment}>
+        <Dialog as="div" onClose={onToggleNav} className="relative z-50">
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -52,26 +73,21 @@ const MobileNav = () => {
             leave="ease-in duration-200"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-            unmount={false}
           >
-            <div className="fixed inset-0 z-60 bg-black/25" />
+            <div className="fixed inset-0 bg-black/25" />
           </Transition.Child>
 
           <Transition.Child
             as={Fragment}
             enter="transition ease-in-out duration-300 transform"
-            enterFrom="translate-x-full opacity-0"
-            enterTo="translate-x-0 opacity-95"
+            enterFrom="translate-x-full"
+            enterTo="translate-x-0"
             leave="transition ease-in duration-200 transform"
-            leaveFrom="translate-x-0 opacity-95"
-            leaveTo="translate-x-full opacity-0"
-            unmount={false}
+            leaveFrom="translate-x-0"
+            leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed left-0 top-0 z-70 h-screen w-full transform bg-gray-200 opacity-95 transition-transform duration-300 ease-in-out dark:bg-dark dark:opacity-[0.98]">
-              <nav
-                ref={navRef}
-                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-8 pt-2 text-left"
-              >
+            <Dialog.Panel className="fixed left-0 top-0 z-50 h-screen w-full bg-gray-200 dark:bg-dark">
+              <nav ref={navRef} className="mt-8 flex h-full flex-col items-start overflow-y-auto pl-8 pt-2 text-left">
                 {headerNavLinks.map((link) => (
                   <Link
                     key={link.title}
@@ -85,7 +101,7 @@ const MobileNav = () => {
               </nav>
 
               <button
-                className="fixed right-2 top-7 z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                className="fixed right-2 top-7 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
                 aria-label="Toggle Menu"
                 onClick={onToggleNav}
               >
