@@ -1,0 +1,8 @@
+Post titles:
+
+- How Tanstack Router & Convex revived Vite
+
+    - No need to use nextjs's APIs (which are not type safe), nextjs's server functions (which are unsecure) or Having to setup TRPC (which is a hassle to setup) having to find a db provider, setting up an ORM such as (Drizzle or Prisma) 
+    - Serparation of concerns, no need for a service like redux-saga to manage logic leaving the frontend light (Convex)
+    - Better routing (Tanstack Router)
+    - Easily maintained by AI because Convex runs entirely on code without the need of an interface (auto completion, AI agents, etc)

@@ -70,7 +70,7 @@ const MobileNav = () => {
             <Dialog.Panel className="fixed left-0 top-0 z-70 h-full w-full transform bg-gray-200 opacity-95 transition-transform duration-300 ease-in-out dark:bg-dark dark:opacity-[0.98]">
               <nav
                 ref={navRef}
-                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-12 pt-2 text-left"
+                className="mt-8 flex h-full basis-0 flex-col items-start overflow-y-auto pl-8 pt-2 text-left"
               >
                 {headerNavLinks.map((link) => (
                   <Link
@@ -85,7 +85,7 @@ const MobileNav = () => {
               </nav>
 
               <button
-                className="fixed right-4 top-7 z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                className="fixed right-2 top-[1.875rem] z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
                 aria-label="Toggle Menu"
                 onClick={onToggleNav}
               >
