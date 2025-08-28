@@ -85,7 +85,7 @@ const MobileNav = () => {
               </nav>
 
               <button
-                className="fixed right-2 top-[1.875rem] z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
+                className="fixed right-2 top-7 z-80 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
                 aria-label="Toggle Menu"
                 onClick={onToggleNav}
               >

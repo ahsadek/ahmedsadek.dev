@@ -34,9 +34,7 @@ const TypedBios = () => {
         <li>
           I love and train <b className="font-medium">Muay Thai</b>.
         </li>
-        <li>
-          I mostly work with <b className="font-medium">Javascript/Typescript</b>.
-        </li>
+        <li>I mostly work with Javascript/Typescript.</li>
         <li>
           I am an <b className="font-medium">AI focused Web Developer</b>.
         </li>
