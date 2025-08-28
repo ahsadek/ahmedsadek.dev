@@ -66,7 +66,7 @@ const TimelineItem = ({ exp, last }: { exp: (typeof EXPERIENCES)[0]; last?: bool
               {org}
             </Link>
             <div className="flex items-center gap-1 pt-1 text-sm text-gray-700 dark:text-gray-200">
-              <Twemoji emoji={icon} className="!-mt-1" />
+              {/* <Twemoji emoji={icon} className="!-mt-1" /> */}
               <span>{title}</span>
             </div>
           </div>

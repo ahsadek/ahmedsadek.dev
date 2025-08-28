@@ -12,7 +12,6 @@ import {
   remarkExtractFrontmatter,
   remarkCodeTitles,
   remarkImgToJsx,
-  extractTocHeadings,
 } from 'pliny/mdx-plugins/index.js';
 // Rehype packages
 import rehypeSlug from 'rehype-slug';
@@ -27,6 +26,30 @@ import { allCoreContent, sortPosts } from 'pliny/utils/contentlayer.js';
 
 const root = process.cwd();
 const isProduction = process.env.NODE_ENV === 'production';
+
+// Custom TOC extraction function that matches rehypeSlug behavior
+function extractTocHeadings(raw: string) {
+  const headingRegex = /^(#{1,6})\s+(.+)$/gm;
+  const headings: Array<{ value: string; url: string; depth: number }> = [];
+  
+  let match;
+  while ((match = headingRegex.exec(raw)) !== null) {
+    const depth = match[1].length;
+    const value = match[2].trim();
+    
+    // Create slug that matches rehypeSlug behavior
+    const url = '#' + value
+      .toLowerCase()
+      .replace(/[^\w\s-]/g, '') // Remove special characters
+      .replace(/\s+/g, '-') // Replace spaces with hyphens
+      .replace(/-+/g, '-') // Replace multiple hyphens with single hyphen
+      .trim();
+    
+    headings.push({ value, url, depth });
+  }
+  
+  return headings;
+}
 
 // heroicon mini link
 const icon = fromHtmlIsomorphic(
@@ -148,7 +171,7 @@ export default makeSource({
     cwd: process.cwd(),
     remarkPlugins: [remarkExtractFrontmatter, remarkGfm, remarkCodeTitles, remarkMath, remarkImgToJsx, remarkAlert],
     rehypePlugins: [
-      rehypeSlug,
+      [rehypeSlug, { maintainCase: true, removeAccents: true, prefix: '' }],
       [
         rehypeAutolinkHeadings,
         {

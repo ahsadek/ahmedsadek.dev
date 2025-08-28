@@ -32,7 +32,7 @@ const Header = () => {
           {/* <div className="animate-wave">
             <Logo className="fill-dark dark:fill-white" />
           </div> */}
-          <div className="group ml-2 text-2xl font-bold transition duration-300">
+          <div className="group ml-1 text-2xl font-bold transition duration-300">
             ahmedsadek.dev
             <span className="block h-0.5 max-w-0 bg-black transition-all duration-500 group-hover:max-w-[85%] dark:bg-white"></span>
           </div>
@@ -62,7 +62,7 @@ const Header = () => {
             className="hidden h-4 w-px shrink-0 bg-gray-200 dark:bg-gray-600 md:block"
           />
           <div className="flex items-center">
-            <AnalyticsLink />
+            {/* <AnalyticsLink /> */}
             <ThemeSwitch />
             {/* <SearchButton /> */}
             <MobileNav />

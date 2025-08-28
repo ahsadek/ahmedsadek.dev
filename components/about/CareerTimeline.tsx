@@ -2,14 +2,14 @@ import TimelineItem from './TimelineItem';
 
 export const EXPERIENCES = [
   {
-    org: 'Younet Media',
-    url: 'https://younetmedia.com',
-    logo: '/static/images/experiences/younetmedia-logo.png',
-    start: 'Mar 2022',
+    org: 'Scikoop',
+    url: 'https://scikoop.com',
+    logo: '/static/images/experiences/scikoop-logo.png',
+    start: 'Apr 2025',
     end: 'Present',
-    title: 'Junior Software Engineer',
+    title: 'Fullstack Developer',
     icon: 'man-technologist',
-    event: 'career-younetmedia',
+    event: 'career-scikoop',
     details: () => {
       return (
         <ul className="[&>li]:my-2 [&>li]:pl-0">
@@ -31,14 +31,14 @@ export const EXPERIENCES = [
     },
   },
   {
-    org: 'QKIT Software',
-    url: 'https://qkit.vn',
-    logo: '/static/images/experiences/qkit-logo.png',
-    start: 'Jan 2021',
-    end: 'Dec 2022',
-    title: 'Fresher Backend Developer',
+    org: 'École de Technologie Supérieure',
+    url: 'https://etsmtl.ca',
+    logo: '/static/images/experiences/ets-logo.png',
+    start: 'Sep 2024',
+    end: 'Present',
+    title: 'Bachelor Degree in Automation Engineering',
     icon: 'man-technologist',
-    event: 'career-qkit',
+    event: 'career-ets',
     details: () => {
       return (
         <ul className="[&>li]:my-2 [&>li]:pl-0">
@@ -57,14 +57,14 @@ export const EXPERIENCES = [
     },
   },
   {
-    org: 'University of Information Technology',
-    url: 'https://en.uit.edu.vn',
-    logo: '/static/images/experiences/uit-logo.png',
-    start: 'Aug 2019',
-    end: 'Jun 2023',
-    title: 'Student ad UIT - HCMC (School of Computer Science)',
+    org: 'Cégep du Vieux Montréal',
+    url: 'https://www.cvm.qc.ca/',
+    logo: '/static/images/experiences/cvm-logo.png',
+    start: 'Aug 2021',
+    end: 'Jun 2024',
+    title: 'Associate Degree in Computer Science',
     icon: 'man-technologist',
-    event: 'career-qkit',
+    event: 'career-cvm',
     details: () => {
       return (
         <ul className="[&>li]:my-2 [&>li]:pl-0">

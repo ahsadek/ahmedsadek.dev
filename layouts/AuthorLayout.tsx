@@ -20,20 +20,17 @@ export default function AuthorLayout({ children, content }: Props) {
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             About
           </h1>
-          <p className="text-base text-gray-500 dark:text-gray-400 md:text-lg md:leading-7">
-            Further insights into who I am and the purpose of this blog.
-          </p>
         </div>
 
-        <div className="items-start space-y-2 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
-          <div className="flex flex-col items-center space-x-2 pt-8 sm:pt-28">
+        <div className="items-start space-y-2 pt-9 xl:grid xl:grid-cols-3 xl:gap-x-8 xl:space-y-0">
+          <div className="flex flex-col items-center space-x-2">
             <Image src={avatar || ''} alt="avatar" width={192} height={192} className="h-48 w-48 rounded-full" />
 
-            <h3 className="pb-2 pt-4 text-2xl font-bold leading-8 tracking-tight">{name}</h3>
-            <div className="text-gray-500 dark:text-gray-400">{occupation}</div>
-            <div className="text-gray-500 dark:text-gray-400">{company}</div>
+            <h3 className="pt-4 text-2xl font-bold leading-8 tracking-tight">Ahmed Sadek</h3>
+            <div className="text-gray-500 dark:text-gray-400">Fullstack Developer</div>
+            {/* <div className="text-gray-500 dark:text-gray-400">{company}</div> */}
 
-            <div className="mt-2 flex gap-3">
+            <div className="mt-3 flex gap-3">
               <Link href={`mailto:${email}`}>
                 <Mail size={24} strokeWidth={1} />
               </Link>
@@ -51,8 +48,8 @@ export default function AuthorLayout({ children, content }: Props) {
 
           {/* <div className="prose max-w-none pb-8 dark:prose-dark xl:col-span-2">{children}</div> */}
 
-          <div className="prose max-w-none pb-8 dark:prose-dark xl:col-span-2">
-            <h2>
+          <div className="prose max-w-none dark:prose-dark xl:col-span-2">
+            {/* <h2>
               Hello, folks! <Twemoji className="mx-2" emoji="waving-hand" /> I'm Trong Khanh (aka Karhdo)
             </h2>
             <p>
@@ -77,17 +74,17 @@ export default function AuthorLayout({ children, content }: Props) {
             <p>
               I would greatly appreciate your thoughts and comments on what I have written{' '}
               <Twemoji emoji="clinking-beer-mugs" />.
-            </p>
-            <div className="flex items-center justify-between">
+            </p> */}
+            <div className="mt-9 flex items-center justify-between md:mt-0">
               <h2>My Career</h2>
 
-              <Button as="a" href="/static/resume.pdf" target="_blank">
+              {/* <Button as="a" href="/static/resume.pdf" target="_blank">
                 <span>Resume</span>
                 <Twemoji emoji="page-facing-up" />
-              </Button>
+              </Button> */}
             </div>
             <CareerTimeline />
-            <h2>Tech stack</h2>
+            {/* <h2>Tech stack</h2>
             <p>
               This blog is built with{' '}
               <a target="_blank" href="https://nextjs.org/">
@@ -158,7 +155,7 @@ export default function AuthorLayout({ children, content }: Props) {
                 repository
               </a>{' '}
               for this blog.
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

@@ -21,28 +21,28 @@ const popularTags: PopularTag[] = [
     title: 'Typescript',
   },
   {
-    href: '/tags/nestjs',
-    iconType: 'NestJS',
-    slug: 'nestjs',
-    title: 'NestJS',
-  },
-  {
     href: '/tags/react',
     iconType: 'React',
     slug: 'react',
     title: 'React',
   },
   {
-    href: '/tags/database',
-    iconType: 'Mongodb',
-    slug: 'database',
-    title: 'Database',
+    href: '/tags/tailwindcss',
+    iconType: 'TailwindCSS',
+    slug: 'tailwindcss',
+    title: 'Tailwind',
   },
   {
-    href: '/tags/devops',
-    iconType: 'Docker',
-    slug: 'devops',
-    title: 'Devops',
+    href: '/tags/nextjs',
+    iconType: 'NextJS',
+    slug: 'nextjs',
+    title: 'NextJS',
+  },
+  {
+    href: '/tags/postgres',
+    iconType: 'Postgres',
+    slug: 'postgres',
+    title: 'Postgres',
   },
 ];
 

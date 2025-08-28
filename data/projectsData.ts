@@ -3,12 +3,12 @@ import type { Project } from '@/types/data';
 const projectsData: Project[] = [
   {
     type: 'work',
-    title: 'EcomHeat - Manage Market Share, Monitor Sales Performance, Optimize Store Operation',
+    title: 'Scikoop',
     description:
       'The pioneering E-commerce data intelligence platform in Vietnam for brands with the most granular data information.',
-    imgSrc: '/static/images/projects/ecom-heat.png',
-    url: 'https://youneteci.com/en/eci-ecomheat/?ref=karhdo.dev',
-    builtWith: ['React', 'Bootstrap', 'FeathersJS', 'MySQL', 'RabbitMQ'],
+    imgSrc: '/static/images/projects/scikoop-website.png',
+    url: 'https://scikoop.com',
+    builtWith: ['Next.js', 'Firebase', 'Typescript', 'Redux', 'Shadcn'],
   },
   {
     type: 'work',
