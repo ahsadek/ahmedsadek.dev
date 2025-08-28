@@ -1,55 +1,76 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
-import { Fragment, useState, useEffect, useRef } from 'react';
+import { Fragment, useState, useEffect, useRef, useCallback } from 'react';
 import Link from '../ui/Link';
 import headerNavLinks from '@/data/headerNavLinks';
 
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false);
-  const navRef = useRef(null);
   const scrollPositionRef = useRef(0);
+  const isScrollLocked = useRef(false);
 
-  const onToggleNav = () => {
-    setNavShow((status) => {
-      if (status) {
-        // Restore scroll position and enable body scroll
-        if (navRef.current) {
-          enableBodyScroll(navRef.current);
-        } else {
-          clearAllBodyScrollLocks();
-        }
-        window.scrollTo(0, scrollPositionRef.current);
-      } else {
-        // Store current scroll position and prevent scrolling
-        scrollPositionRef.current = window.scrollY;
-        // Use document.body as fallback if navRef is not available
-        const targetElement = navRef.current || document.body;
-        try {
-          disableBodyScroll(targetElement, {
-            reserveScrollBarGap: true,
-          });
-        } catch (error) {
-          // Fallback: just prevent scrolling using CSS
-          document.body.style.overflow = 'hidden';
-        }
-      }
-      return !status;
-    });
-  };
+  const lockScroll = useCallback(() => {
+    if (!isScrollLocked.current) {
+      scrollPositionRef.current = window.scrollY;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${scrollPositionRef.current}px`;
+      document.body.style.width = '100%';
+      isScrollLocked.current = true;
+    }
+  }, []);
 
+  const unlockScroll = useCallback(() => {
+    if (isScrollLocked.current) {
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.width = '';
+      window.scrollTo(0, scrollPositionRef.current);
+      isScrollLocked.current = false;
+    }
+  }, []);
+
+  const onToggleNav = useCallback(() => {
+    setNavShow((status) => !status);
+  }, []);
+
+  // Handle scroll lock/unlock based on navShow state
+  useEffect(() => {
+    if (navShow) {
+      lockScroll();
+    } else {
+      unlockScroll();
+    }
+  }, [navShow, lockScroll, unlockScroll]);
+
+  // Cleanup on unmount
   useEffect(() => {
     return () => {
-      clearAllBodyScrollLocks();
-      // Ensure body scroll is restored on unmount
-      document.body.style.overflow = '';
+      unlockScroll();
     };
-  }, []);
+  }, [unlockScroll]);
+
+  // Handle escape key
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === 'Escape' && navShow) {
+        setNavShow(false);
+      }
+    };
+
+    document.addEventListener('keydown', handleEscape);
+    return () => document.removeEventListener('keydown', handleEscape);
+  }, [navShow]);
 
   return (
     <>
-      <button data-umami-event="mobile-nav-toggle" aria-label="Toggle Menu" onClick={onToggleNav} className="sm:hidden">
+      <button
+        data-umami-event="mobile-nav-toggle"
+        aria-label="Toggle Menu"
+        onClick={onToggleNav}
+        className="sm:hidden"
+        aria-expanded={navShow}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 20 20"
@@ -63,6 +84,7 @@ const MobileNav = () => {
           />
         </svg>
       </button>
+
       <Transition appear show={navShow} as={Fragment}>
         <Dialog as="div" onClose={onToggleNav} className="relative z-50">
           <Transition.Child
@@ -86,8 +108,11 @@ const MobileNav = () => {
             leaveFrom="translate-x-0"
             leaveTo="translate-x-full"
           >
-            <Dialog.Panel className="fixed left-0 top-0 z-50 h-screen w-full bg-gray-200 dark:bg-dark">
-              <nav ref={navRef} className="mt-8 flex h-full flex-col items-start overflow-y-auto pl-8 pt-2 text-left">
+            <Dialog.Panel
+              className="fixed left-0 top-0 z-50 h-screen w-full bg-gray-200 dark:bg-dark"
+              // style={{ opacity: 0.97 }}
+            >
+              <nav className="mt-8 flex h-full flex-col items-start overflow-y-auto pl-8 pt-2 text-left">
                 {headerNavLinks.map((link) => (
                   <Link
                     key={link.title}
@@ -102,7 +127,7 @@ const MobileNav = () => {
 
               <button
                 className="fixed right-2 top-7 h-16 w-16 p-4 text-gray-900 hover:text-primary-500 dark:text-gray-100 dark:hover:text-primary-400"
-                aria-label="Toggle Menu"
+                aria-label="Close Menu"
                 onClick={onToggleNav}
               >
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
