@@ -1,7 +1,6 @@
 'use client';
 
 import { Dialog, Transition } from '@headlessui/react';
-import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 import { Fragment, useState, useEffect, useRef } from 'react';
 import Link from '../ui/Link';
 import headerNavLinks from '@/data/headerNavLinks';
@@ -13,17 +12,21 @@ const MobileNav = () => {
   const onToggleNav = () => {
     setNavShow((status) => {
       if (status) {
-        enableBodyScroll(navRef.current);
+        // Enable scrolling when closing
+        document.body.style.overflow = '';
       } else {
-        // Prevent scrolling
-        disableBodyScroll(navRef.current);
+        // Disable scrolling when opening
+        document.body.style.overflow = 'hidden';
       }
       return !status;
     });
   };
 
   useEffect(() => {
-    return clearAllBodyScrollLocks;
+    return () => {
+      // Cleanup on unmount
+      document.body.style.overflow = '';
+    };
   }, []);
 
   return (
