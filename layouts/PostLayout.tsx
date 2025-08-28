@@ -21,13 +21,13 @@ export default function PostLayout(props: LayoutProps) {
   const { slug, toc, date, title, tags, readingTime, type } = content;
 
   return (
-    <SectionContainer>
+    <section>
       <ScrollTopAndComment />
 
       <article>
         {/*START: Header*/}
         <header>
-          <div className="dark:border-gray space-y-1 border-b border-gray-200 pb-10">
+          <div className="dark:border-gray space-y-1 border-b border-gray-200 pb-6">
             <div className="space-y-6">
               <PageTitle>{title}</PageTitle>
               <BlogTags tags={tags} />
@@ -69,6 +69,6 @@ export default function PostLayout(props: LayoutProps) {
         </footer>
         {/*END: Footer*/}
       </article>
-    </SectionContainer>
+    </section>
   );
 }

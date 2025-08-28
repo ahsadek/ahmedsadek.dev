@@ -13,9 +13,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
     <div className="md max-w-[544px] p-4 md:w-1/2">
       <div
-        className={`${
-          imgSrc && 'h-full'
-        } flex h-full flex-col overflow-hidden rounded-lg border border-transparent shadow-nextjs dark:shadow-nextjs-dark`}
+        className={`${imgSrc && 'h-full'} flex h-full flex-col overflow-hidden rounded-lg border border-gray-200 bg-neutral-50 shadow-lg dark:border-gray-800 dark:bg-neutral-900/80`}
       >
         <Zoom>
           <Image

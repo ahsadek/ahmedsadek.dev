@@ -9,24 +9,24 @@ import ViewCounter from '@/components/blog/ViewCounter';
 
 const BlogMeta = ({ date, slug, readingTime }: BlogMetaProps) => {
   return (
-    <dd className="flex-column flex gap-1 font-semibold text-gray-500 dark:text-gray-400">
+    <dd className="flex-column flex items-center gap-1 font-semibold text-gray-500 dark:text-gray-400">
       <time dateTime={date} className="flex items-center">
         <Twemoji emoji="calendar" />
-        <span className="ml-1 md:ml-2">{formatDate(date)}</span>
+        <span className="text-center sm:ml-2">{formatDate(date)}</span>
       </time>
 
       <span className="mx-2">{` • `}</span>
 
       <div className="flex items-center">
         <Twemoji emoji="hourglass-not-done" />
-        <span className="ml-1.5 md:ml-2">{Math.ceil(readingTime.minutes)} mins read</span>
+        <span className="text-center sm:ml-1.5">{Math.ceil(readingTime.minutes)} mins read</span>
       </div>
 
       <span className="mx-2">{` • `}</span>
 
       <div className="flex items-center">
         <Twemoji emoji="eye" />
-        <ViewCounter className="ml-1.5 md:ml-2" slug={slug} type={StatsType.blog} />
+        <ViewCounter className="text-center sm:ml-2" slug={slug} type={StatsType.blog} />
       </div>
     </dd>
   );
