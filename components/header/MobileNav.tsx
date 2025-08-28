@@ -60,6 +60,16 @@ const MobileNav = () => {
     [closeNav]
   );
 
+  const handleKeyDown = useCallback(
+    (e) => {
+      // Close nav when pressing Escape key
+      if (e.key === 'Escape') {
+        closeNav();
+      }
+    },
+    [closeNav]
+  );
+
   const handleLinkClick = useCallback(() => {
     closeNav();
   }, [closeNav]);
@@ -109,7 +119,14 @@ const MobileNav = () => {
       </button>
 
       {navShow && (
-        <div className="relative z-50" onClick={handleOverlayClick}>
+        <div
+          className="relative z-50"
+          onClick={handleOverlayClick}
+          onKeyDown={handleKeyDown}
+          role="button"
+          tabIndex={0}
+          aria-label="Close mobile navigation"
+        >
           {/* Slide panel */}
           <div
             ref={panelRef}
