@@ -38,7 +38,7 @@ const TypedBios = () => {
           I am an <b className="font-medium">AI focused Web Developer</b>.
         </li>
         <li>
-          I'm launching my first <b className="font-medium">AI startup</b> soon ;)
+          I'm launching my first <b className="font-medium">AI startup</b> soon.
         </li>
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
