@@ -32,14 +32,11 @@ const TypedBios = () => {
           I currently live in <b className="font-medium">Montreal, Canada</b>.
         </li>
         <li>
-          I love MMA and train <b className="font-medium">Kickboxing</b>.
+          I am an <b className="font-medium">AI enthusiast</b> Web Developer.
         </li>
-        <li>
-          I am an <b className="font-medium">AI focused Web Developer</b>.
-        </li>
-        <li>
+        {/* <li>
           I'm launching my first <b className="font-medium">AI startup</b> soon.
-        </li>
+        </li> */}
       </ul>
       <span ref={el} className="text-neutral-900 dark:text-neutral-200" />
     </div>
