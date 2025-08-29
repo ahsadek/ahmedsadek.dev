@@ -12,7 +12,7 @@ export default function Footer() {
             <span></span>
           </div>
           <span className="flex items-center px-3 sm:px-0">{` • `}</span>
-          <span>Ahmed's Personal Website</span>
+          <span>Ahmed's Website</span>
           <span className="flex items-center px-3 sm:px-0">{` • `}</span>
 
           <span>
