@@ -23,6 +23,7 @@ export default async function Projects() {
 
   const workProjects = projects.filter(({ type }) => type === 'work');
   const sideProjects = projects.filter(({ type }) => type === 'self');
+  const academicProjects = projects.filter(({ type }) => type === 'academic');
 
   return (
     <>
@@ -42,7 +43,7 @@ export default async function Projects() {
           </div>
         </div> */}
 
-        <div className="container py-12">
+        <div className="container pt-12">
           {/* <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
             Work
           </h3> */}
@@ -51,6 +52,9 @@ export default async function Projects() {
               <ProjectCard key={project.title} project={project} />
             ))}
             {sideProjects.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+            {academicProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>

@@ -6,7 +6,7 @@ const projectsData: Project[] = [
     title: 'Scikoop',
     description:
       'The pioneering E-commerce data intelligence platform in Vietnam for brands with the most granular data information.',
-    imgSrc: '/static/images/projects/scikoop-website.png',
+    imgSrc: '/static/images/projects/scikoop-thumbnail.png',
     url: 'https://scikoop.com',
     builtWith: ['Next.js', 'Firebase', 'Typescript', 'Redux', 'Shadcn/ui'],
   },
@@ -36,8 +36,16 @@ const projectsData: Project[] = [
     type: 'self',
     title: 'Bottlr',
     description: 'Explore the World of Basic 3D Modeling Simulations on Our Website.',
-    imgSrc: '/static/images/projects/bottlr-website.png',
+    imgSrc: '/static/images/projects/bottlr-thumbnail.png',
     url: 'https://bottlr.ai',
+    builtWith: ['VueJS', 'Convex', 'Typescript', 'Shadcn/ui'],
+  },
+  {
+    type: 'academic',
+    title: 'Magix - Card Game',
+    description: 'Explore the World of Basic 3D Modeling Simulations on Our Website.',
+    imgSrc: '/static/images/projects/magix-thumbnail.png',
+    url: 'https://magix.ahmedsadek.dev',
     builtWith: ['VueJS', 'Convex', 'Typescript', 'Shadcn/ui'],
   },
 ];

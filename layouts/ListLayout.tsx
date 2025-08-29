@@ -103,10 +103,11 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
         </div>
         <ul>
           {!filteredBlogPosts.length && 'No posts found.'}
-          {displayPosts.map((post) => {
+          {displayPosts.map((post, index) => {
             const { path, date, title, summary, tags } = post;
+            const isLastPost = index === displayPosts.length - 1;
             return (
-              <li key={path} className="border-b border-gray-200 py-4 dark:border-gray-700">
+              <li key={path} className={`py-4 ${!isLastPost ? 'border-b border-gray-200 dark:border-gray-700' : ''}`}>
                 <article className="space-y-2 xl:grid xl:grid-cols-4 xl:items-baseline xl:space-y-0">
                   <dl>
                     <dt className="sr-only">Published on</dt>

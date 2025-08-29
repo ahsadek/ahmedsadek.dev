@@ -1,7 +1,7 @@
 import { GithubRepository } from './server';
 
 export interface Project {
-  type: 'work' | 'self';
+  type: 'work' | 'self' | 'academic';
   title: string;
   description?: string;
   imgSrc: string;

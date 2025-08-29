@@ -60,7 +60,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
                 className="text-primary text-base font-medium leading-6 hover:text-sky-600 dark:hover:text-sky-400"
                 aria-label={`Link to ${title}`}
               >
-                Learn more &rarr;
+                Visit &rarr;
               </Link>
             )
           )}
