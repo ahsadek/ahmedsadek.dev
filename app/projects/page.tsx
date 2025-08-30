@@ -70,7 +70,7 @@ export default async function Projects() {
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
-          <div className="h-6 md:h-12" />
+          <div className="h-6 md:h-8" />
         </div>
         {/* <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">{description}</p> */}
       </div>

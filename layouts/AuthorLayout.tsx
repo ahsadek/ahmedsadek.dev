@@ -158,10 +158,10 @@ export default function AuthorLayout({ children, content }: Props) {
               for this blog.
             </p> */}
           </div>
-          <div className="h-2 xl:h-60" />
+          {/* <div className="h-2 xl:h-64" /> */}
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

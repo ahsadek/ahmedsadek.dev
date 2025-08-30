@@ -7,6 +7,7 @@ import { StatsType } from '@prisma/client';
 import siteMetadata from '@/data/siteMetadata';
 import { BlogTags, BlogMeta, BlogNav, TableOfContents, Reactions } from '@/components/blog';
 import { Comments, PageTitle, SectionContainer, ScrollTopAndComment } from '@/components/ui';
+import Footer from '@/components/footer';
 
 interface LayoutProps {
   content: CoreContent<Blog>;
@@ -66,6 +67,8 @@ export default function PostLayout(props: LayoutProps) {
               <Comments />
             </div>
           )}
+          {/* <div className="h-6 md:h-1" /> */}
+          <Footer />
         </footer>
         {/*END: Footer*/}
       </article>
