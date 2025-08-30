@@ -67,7 +67,7 @@ export default function PostLayout(props: LayoutProps) {
               <Comments />
             </div>
           )}
-          <div className="h-4 md:h-6" />
+          <div className="h-3 md:h-6" />
           {/* <Footer /> */}
         </footer>
         {/*END: Footer*/}
