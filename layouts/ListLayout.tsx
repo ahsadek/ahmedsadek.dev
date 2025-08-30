@@ -70,7 +70,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
   return (
     <>
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
-        <div className="flex items-center justify-between pb-3 md:pt-6">
+        <div className="flex items-center justify-between gap-3 pb-3 md:pt-6">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
             {title}
           </h1>

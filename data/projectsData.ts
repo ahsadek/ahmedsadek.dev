@@ -38,7 +38,7 @@ const projectsData: Project[] = [
     description: 'Bottlr automates business communication with AI chatbots powered by your documents.',
     imgSrc: '/static/images/projects/bottlr-thumbnail.png',
     url: 'https://bottlr.ai',
-    builtWith: ['VueJS', 'Convex', 'Typescript', 'Shadcn/ui', 'Stripe'],
+    builtWith: ['Vite', 'Convex', 'Typescript', 'Shadcn/ui', 'Stripe'],
   },
   {
     type: 'self',
