@@ -3,9 +3,9 @@
   "short_name": "",
   "icons": [
     {
-      "src": "/tennis-racquet.png",
-      "sizes": "96x96",
-      "type": "image/png"
+      "src": "/static/favicons/favicon.ico",
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon"
     }
   ],
   "theme_color": "#000000",
