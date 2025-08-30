@@ -52,5 +52,9 @@ export default async function TagPage(props: { params: Promise<{ tag: string }> 
     return notFound();
   }
 
-  return <ListLayout posts={filteredPosts} title={title} />;
+  return (
+    <>
+      <ListLayout posts={filteredPosts} title={title} />
+    </>
+  );
 }

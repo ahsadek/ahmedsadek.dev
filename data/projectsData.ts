@@ -3,9 +3,9 @@ import type { Project } from '@/types/data';
 const projectsData: Project[] = [
   {
     type: 'work',
-    title: 'Scikoop',
+    title: 'Scikoop : Inclusive Research Platform',
     description:
-      'The pioneering E-commerce data intelligence platform in Vietnam for brands with the most granular data information.',
+      'AI-powered platform helping researchers build inclusive studies through EDI assessments, strategies, support, and certification.',
     imgSrc: '/static/images/projects/scikoop-thumbnail.png',
     url: 'https://scikoop.com',
     builtWith: ['Next.js', 'Firebase', 'Typescript', 'Redux', 'Shadcn/ui'],
@@ -34,19 +34,27 @@ const projectsData: Project[] = [
   // },
   {
     type: 'self',
-    title: 'Bottlr',
-    description: 'Explore the World of Basic 3D Modeling Simulations on Our Website.',
+    title: 'Bottlr : AI-powered Chatbot',
+    description: 'Bottlr automates business communication with AI chatbots powered by your documents.',
     imgSrc: '/static/images/projects/bottlr-thumbnail.png',
     url: 'https://bottlr.ai',
-    builtWith: ['VueJS', 'Convex', 'Typescript', 'Shadcn/ui'],
+    builtWith: ['VueJS', 'Convex', 'Typescript', 'Shadcn/ui', 'Stripe'],
+  },
+  {
+    type: 'self',
+    title: 'TerminalWear : E-commerce Template',
+    description: 'E-commerce template integrated with Printful for print-on-demand, featuring Stripe payments.',
+    imgSrc: '/static/images/projects/terminalwear-thumbnail.png',
+    url: 'https://terminalwear.com',
+    builtWith: ['Next.js', 'PostgreSQL', 'Drizzle', 'Stripe', 'Sanity.io'],
   },
   {
     type: 'academic',
-    title: 'Magix - Card Game',
-    description: 'Explore the World of Basic 3D Modeling Simulations on Our Website.',
+    title: 'Magix : Online Card Game',
+    description: 'Online card game built in PHP with custom state management.',
     imgSrc: '/static/images/projects/magix-thumbnail.png',
     url: 'https://magix.ahmedsadek.dev',
-    builtWith: ['VueJS', 'Convex', 'Typescript', 'Shadcn/ui'],
+    builtWith: ['PHP', 'Javascript', 'PostgreSQL'],
   },
 ];
 

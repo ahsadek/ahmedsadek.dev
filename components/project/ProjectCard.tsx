@@ -40,16 +40,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           </p>
 
           <div className="mb-3 flex flex-wrap space-x-1.5">
-            <span className="shrink-0">Built with: </span>
-            {builtWith?.map((tool, index) => {
-              return (
-                <span key={index} className="font-semibold text-gray-600 dark:text-gray-300">
-                  {tool}
-                  {index !== builtWith.length - 1 && ','}
-                </span>
-              );
-            })}
-            .
+            <span className="font-medium text-gray-600 dark:text-gray-300">Built with: {builtWith?.join(', ')}.</span>
           </div>
           {repository ? (
             <GithubRepo repo={repository} />
@@ -57,7 +48,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
             href && (
               <Link
                 href={href}
-                className="text-primary text-base font-medium leading-6 hover:text-sky-600 dark:hover:text-sky-400"
+                className="text-primary text-base font-medium leading-6 text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
                 aria-label={`Link to ${title}`}
               >
                 Visit &rarr;

@@ -135,6 +135,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
       {pagination && pagination.totalPages > 1 && !searchValue && (
         <Pagination currentPage={pagination.currentPage} totalPages={pagination.totalPages} />
       )}
+      <div className="h-6" />
     </>
   );
 }

@@ -1,9 +1,10 @@
 import { ReactNode } from 'react';
 import type { Authors } from 'contentlayer/generated';
-import { Mail, Linkedin, Github, Twitter } from 'lucide-react';
+import { Mail, Linkedin, Github, Twitter, Instagram } from 'lucide-react';
 
 import { CareerTimeline } from '@/components/about';
 import { Link, Image, Button, Twemoji } from '@/components/ui';
+import Footer from '@/components/footer';
 
 interface Props {
   children: ReactNode;
@@ -31,17 +32,17 @@ export default function AuthorLayout({ children, content }: Props) {
             {/* <div className="text-gray-500 dark:text-gray-400">{company}</div> */}
 
             <div className="mt-3 flex gap-3">
-              <Link href={`mailto:${email}`}>
+              <Link href={`mailto:ahmedsadek14@gmail.com`}>
                 <Mail size={24} strokeWidth={1} />
               </Link>
-              <Link href={github || ''} target="_blank">
+              <Link href={`https://github.com/ahsadek`} target="_blank">
                 <Github size={24} strokeWidth={1} />
               </Link>
-              <Link href={linkedin || ''} target="_blank">
+              <Link href={`https://www.linkedin.com/in/ahmedsadek14/`} target="_blank">
                 <Linkedin size={24} strokeWidth={1} />
               </Link>
-              <Link href={twitter || ''} target="_blank">
-                <Twitter size={24} strokeWidth={1} />
+              <Link href={`https://www.instagram.com/ahsadek_/`} target="_blank">
+                <Instagram size={24} strokeWidth={1} />
               </Link>
             </div>
           </div>
@@ -157,8 +158,10 @@ export default function AuthorLayout({ children, content }: Props) {
               for this blog.
             </p> */}
           </div>
+          <div className="h-2 xl:h-60" />
         </div>
       </div>
+      <Footer />
     </>
   );
 }

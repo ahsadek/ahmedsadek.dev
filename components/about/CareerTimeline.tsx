@@ -13,18 +13,12 @@ export const EXPERIENCES = [
     details: () => {
       return (
         <ul className="[&>li]:my-2 [&>li]:pl-0">
+          <li>Build and maintain a large-scale project using Next.js (frontend) and Firebase (backend).</li>
+          <li>Integrate Redux and Redux-Saga for efficient state management and complex client-side data workflows.</li>
+          <li>Supervise interns, guiding them through development tasks and best practices.</li>
           <li>
-            Build{' '}
-            <a href="https://ecomheat.youneteci.com" rel="noopener noreferrer" target="_blank">
-              Ecomheat
-            </a>{' '}
-            - a website helps to measure the performance of the industry and players on E-Commerce platforms thru cross
-            E-commerce channels.
-          </li>
-          <li>
-            Build <strong>AppCore</strong> - Developed and published core NestJS packages, including DatabaseModule,
-            CacheModule, RedisModule, ConfigModule and others on npm to accelerate development and deployment across
-            multiple projects.
+            Significantly improve development productivity by leveraging AI tools for coding, documentation, and mockup
+            generation.
           </li>
         </ul>
       );
@@ -43,14 +37,12 @@ export const EXPERIENCES = [
       return (
         <ul className="[&>li]:my-2 [&>li]:pl-0">
           <li>
-            <strong>Developed and maintained web applications</strong> for managing company website content, including
-            blogs, clients, and recruitment.
+            Pursue a degree in Automation Engineering, focusing on optimizing and automating technical and business
+            workflows.
           </li>
           <li>
-            Implemented backend solutions using <strong> NestJS, PostgreSQL, and Prisma</strong>.
-          </li>
-          <li>
-            <strong>Participated in Agile methodologies </strong> to boost project efficiency and completion rates.
+            Apply automation principles and tools to design efficient processes, reducing manual labor and operational
+            costs.
           </li>
         </ul>
       );
@@ -68,14 +60,10 @@ export const EXPERIENCES = [
     details: () => {
       return (
         <ul className="[&>li]:my-2 [&>li]:pl-0">
+          <li>Completed a Computer Science degree with a focus on web development and artificial intelligence.</li>
           <li>
-            Get a good degree at <strong>School of Computer Science</strong>
-          </li>
-          <li>
-            While most of my friends pursued careers in <strong> Data or AI Engineering </strong>, I found my passion in{' '}
-            {''}
-            <strong>Software Engineering</strong> , particularly in web and app development. This decision has shaped
-            who I am today.
+            Gained hands-on experience in building web applications and exploring AI-driven solutions to real-world
+            problems.
           </li>
         </ul>
       );

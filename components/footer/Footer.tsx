@@ -8,7 +8,7 @@ export default function Footer() {
           Forked from{' '}
           <a
             href="https://github.com/Karhdo/karhdo.dev"
-            className="text-primary cursor-pointer text-blue-500"
+            className="text-primary cursor-pointer text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
             target="_blank"
           >
             karhdo.dev

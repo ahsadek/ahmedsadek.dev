@@ -3,6 +3,7 @@ import { genPageMetadata } from 'app/seo';
 import projectsData from '@/data/projectsData';
 import { fetchRepoData } from '@/servers/github.server';
 import ProjectCard from '@/components/project/ProjectCard';
+import Footer from '@/components/footer';
 
 export const metadata = genPageMetadata({ title: 'Projects' });
 
@@ -30,7 +31,7 @@ export default async function Projects() {
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-3 md:space-y-5 md:pt-6">
           <h1 className="text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
-            Projects - Work
+            Projects
           </h1>
           {/* <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">{description}</p> */}
         </div>
@@ -47,20 +48,33 @@ export default async function Projects() {
           {/* <h3 className="mb-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
             Work
           </h3> */}
-          <div className="-m-4 flex flex-wrap">
+          <div className="-m-4 flex flex-col flex-wrap">
+            <h3 className="mb-2 ml-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+              Work
+            </h3>
             {workProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
-            {sideProjects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
+            <h3 className="mb-2 ml-4 mt-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+              Personal Projects
+            </h3>
+            <div className="flex flex-col md:flex-row">
+              {sideProjects.map((project) => (
+                <ProjectCard key={project.title} project={project} />
+              ))}
+            </div>
+            <h3 className="mb-2 ml-4 mt-4 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100">
+              Academic Projects
+            </h3>
             {academicProjects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
+          <div className="h-6 md:h-12" />
         </div>
         {/* <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">{description}</p> */}
       </div>
+      <Footer />
     </>
   );
 }
