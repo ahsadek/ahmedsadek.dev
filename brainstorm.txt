@@ -2,7 +2,19 @@ Post titles:
 
 - How Tanstack Router & Convex revived Vite
 
-    - No need to use nextjs's APIs (which are not type safe), nextjs's server functions (which are unsecure) or Having to setup TRPC (which is a hassle to setup) having to find a db provider, setting up an ORM such as (Drizzle or Prisma) 
+    - No need to use nextjs's APIs (which are not type safe), nextjs's server functions (which are unsecure) or Having to setup TRPC (which is a hassle to setup) having to find a db provider, setting up an ORM such as (Drizzle or Prisma)
+    - Now I don't really use nextjs unless I find a prebuilt template with the features I want that would have other wise taken me days to code them myself.
+    - The other case where I would you nextjs still is for Statically Generated Pages, but I rarely have to use them when developing web applications and even if I need to 
     - Serparation of concerns, no need for a service like redux-saga to manage logic leaving the frontend light (Convex)
     - Better routing (Tanstack Router)
     - Easily maintained by AI because Convex runs entirely on code without the need of an interface (auto completion, AI agents, etc)
+
+- Don't over engineer everything
+    - Use website builders and drop you ego if the job needs so. From the simplest ones such as Squarespace to ones with a lot of customizability such a Webflow, they will probably integrate SEOs and all the marketing side of the business better than you
+    - Don't be afraid to vibe code (for boilerplate code), but don't depend on it
+    - For God's sake use cursor, or any completion agent, pay the 20$, I compared my productivity at my job where I did use it and didn't and I can confirm I there was at least a 2x increase in my productivity levels. productivity has a direct coorelation with how valuable you are in this industry.
+    - If you want to implement a new feature, make sure to search for it on github before going ahead and coding it from scratch, 9 times out of 10 you will find exactly what you are looking for which brings me to my next point
+    - Don't be afraid to fork (copy) projects and add onto them (this significantly increases the speed in which you read other people code)
+    - Use tools and libraries that are popular, not because you are jumping in the hype trend but because you know there is a very big community and there will be answers for almost any question you ask.
+    - Especially now with AI tools, such as lovable, if you ask it to build a feature, it will almost always build it using the following tech stack: Vite, React, Tailwind, Shadcn/ui. That's why I try not to move too far from these choices, because I know in case things go to hell, I have the huge community to support me and also AI.
+    - Don't take advice from everyone even some seniors give bad advice and especially the reddit keyboard warriors, sometimes you have to trust your own judgement, taking in consideration your project's due date which people giving advice over look a lot.
