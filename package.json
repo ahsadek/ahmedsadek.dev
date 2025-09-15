@@ -12,7 +12,8 @@
     "analyze": "cross-env ANALYZE=true next build",
     "prepare": "husky install",
     "lint": "next lint --fix --dir pages --dir app --dir components --dir lib --dir layouts --dir scripts",
-    "migrate:postgres": "dotenv -e .env.local -- npx prisma migrate deploy"
+    "migrate:postgres": "dotenv -e .env.local -- npx prisma migrate deploy",
+    "db:show-tables": "dotenv -e .env.local -- node scripts/show-db-tables.mjs"
   },
   "dependencies": {
     "@headlessui/react": "2.2.0",

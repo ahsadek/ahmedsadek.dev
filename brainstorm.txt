@@ -18,3 +18,5 @@ Post titles:
     - Use tools and libraries that are popular, not because you are jumping in the hype trend but because you know there is a very big community and there will be answers for almost any question you ask.
     - Especially now with AI tools, such as lovable, if you ask it to build a feature, it will almost always build it using the following tech stack: Vite, React, Tailwind, Shadcn/ui. That's why I try not to move too far from these choices, because I know in case things go to hell, I have the huge community to support me and also AI.
     - Don't take advice from everyone even some seniors give bad advice and especially the reddit keyboard warriors, sometimes you have to trust your own judgement, taking in consideration your project's due date which people giving advice over look a lot.
+
+    I am writing a short blog post in my portfolio / blog site, here are the bullet points
