@@ -3,7 +3,7 @@ const siteMetadata = {
   author: 'Ahmed Sadek',
   fullName: 'Ahmed Sadek',
   headerTitle: "Ahmed's Personal Website",
-  description: 'My desire to practice my skills and share my acquired knowledge fuels my endeavors.',
+  description: 'Welcome to my portfolio / blog!',
   language: 'en-us',
   theme: 'system',
   siteUrl: 'https://ahmedsadek.dev',
