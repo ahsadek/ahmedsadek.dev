@@ -11,7 +11,7 @@ const siteMetadata = {
   siteRepo: 'https://github.com/ahsadek/ahmedsadek.dev',
   siteLogo: '/static/images/avatar.jpg',
   image: '/static/images/avatar.jpg',
-  socialBanner: '/static/images/projects/karhdo-blog.png',
+  socialBanner: '/static/images/og-image.png',
   email: 'ahmedsadek14@gmail.com',
   github: 'https://github.com/Karhdo',
   facebook: 'https://www.facebook.com/karhdo.dev',
