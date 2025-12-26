@@ -1,14 +1,21 @@
 #!/usr/bin/env node
 
 import { PrismaClient } from '@prisma/client';
-import { execSync } from 'child_process';
+import { PrismaPg } from '@prisma/adapter-pg';
+import pkg from 'pg';
+const { Pool } = pkg;
 import { config } from 'dotenv';
 import { resolve } from 'path';
 
 // Load environment variables from .env.local
 config({ path: resolve(process.cwd(), '.env.local') });
 
-const prisma = new PrismaClient();
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+});
+
+const adapter = new PrismaPg(pool);
+const prisma = new PrismaClient({ adapter });
 
 async function showAllTables() {
   try {
@@ -16,9 +23,9 @@ async function showAllTables() {
 
     // Get all tables from the database
     const tables = await prisma.$queryRaw`
-      SELECT table_name 
-      FROM information_schema.tables 
-      WHERE table_schema = 'public' 
+      SELECT table_name
+      FROM information_schema.tables
+      WHERE table_schema = 'public'
       AND table_type = 'BASE TABLE'
       ORDER BY table_name;
     `;

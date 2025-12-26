@@ -2,9 +2,19 @@
 // Learn more: https://pris.ly/d/help/next-js-best-practices
 //
 import { PrismaClient } from '@prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+import { Pool } from 'pg';
 
 const prismaClientSingleton = () => {
-  return new PrismaClient();
+  const connectionString = process.env.POSTGRES_URL;
+
+  const pool = new Pool({
+    connectionString,
+  });
+
+  const adapter = new PrismaPg(pool);
+
+  return new PrismaClient({ adapter });
 };
 
 type PrismaClientSingleton = ReturnType<typeof prismaClientSingleton>;
