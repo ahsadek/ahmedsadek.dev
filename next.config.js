@@ -68,9 +68,6 @@ module.exports = () => {
     basePath,
     reactStrictMode: true,
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
-    eslint: {
-      dirs: ['app', 'components', 'layouts', 'scripts'],
-    },
     images: {
       remotePatterns: [
         {
@@ -79,6 +76,7 @@ module.exports = () => {
         },
       ],
       unoptimized,
+      qualities: [100],
     },
     async headers() {
       return [
@@ -87,6 +85,14 @@ module.exports = () => {
           headers: securityHeaders,
         },
       ];
+    },
+    turbopack: {
+      rules: {
+        '*.svg': {
+          loaders: ['@svgr/webpack'],
+          as: '*.js',
+        },
+      },
     },
     webpack: (config) => {
       config.module.rules.push({

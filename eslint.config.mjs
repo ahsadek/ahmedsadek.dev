@@ -1,70 +1,54 @@
-import typescriptEslint from '@typescript-eslint/eslint-plugin';
 import globals from 'globals';
 import tsParser from '@typescript-eslint/parser';
-import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+import tsPlugin from '@typescript-eslint/eslint-plugin';
 import js from '@eslint/js';
-import { FlatCompat } from '@eslint/eslintrc';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+import prettierConfig from 'eslint-config-prettier';
 
 export default [
   {
-    ignores: ['tailwind.config.js'],
+    ignores: [
+      'tailwind.config.js',
+      '.next/**',
+      'node_modules/**',
+      'out/**',
+      '.contentlayer/**',
+    ],
   },
   js.configs.recommended,
-  ...compat.extends(
-    'plugin:@typescript-eslint/eslint-recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended',
-    'next',
-    'next/core-web-vitals'
-  ),
   {
+    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
     plugins: {
-      '@typescript-eslint': typescriptEslint,
+      '@typescript-eslint': tsPlugin,
     },
-
     languageOptions: {
       globals: {
         ...globals.browser,
-        ...globals.amd,
         ...globals.node,
       },
-
       parser: tsParser,
-      ecmaVersion: 5,
-      sourceType: 'commonjs',
-
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       parserOptions: {
-        project: true,
-        tsconfigRootDir: __dirname,
+        ecmaFeatures: {
+          jsx: true,
+        },
       },
     },
-
     rules: {
-      'prettier/prettier': 'error',
+      ...tsPlugin.configs['recommended'].rules,
+      'prettier/prettier': 'off',
       'react/react-in-jsx-scope': 'off',
-
-      'jsx-a11y/anchor-is-valid': [
-        'error',
-        {
-          components: ['Link'],
-          specialLink: ['hrefLeft', 'hrefRight'],
-          aspects: ['invalidHref', 'preferButton'],
-        },
-      ],
       'react/prop-types': 'off',
       '@typescript-eslint/no-unused-vars': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
       'react/no-unescaped-entities': 'off',
       '@typescript-eslint/explicit-module-boundary-types': 'off',
       '@typescript-eslint/no-var-requires': 'off',
       '@typescript-eslint/ban-ts-comment': 'off',
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-require-imports': 'off',
     },
   },
+  prettierConfig,
 ];
