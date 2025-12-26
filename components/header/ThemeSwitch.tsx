@@ -14,20 +14,24 @@ const ThemeSwitch = () => {
   // When mounted on client, now we can show the UI
   useEffect(() => setMounted(true), []);
 
+  if (!mounted) {
+    return (
+      <div className="mx-1 flex items-center">
+        <div className="relative inline-block text-left">
+          <div className="flex h-8 w-8 items-center justify-center rounded p-1">
+            <Blank />
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="mx-1 flex items-center">
       <Menu as="div" className="relative inline-block text-left">
         <div className="flex h-8 w-8 items-center justify-center rounded p-1 hover:bg-gray-200 dark:hover:bg-primary-600">
           <Menu.Button aria-label="Theme switcher">
-            {mounted ? (
-              resolvedTheme === 'dark' ? (
-                <MoonStar strokeWidth={1.5} size={22} />
-              ) : (
-                <Sun strokeWidth={1.5} size={22} />
-              )
-            ) : (
-              <Blank />
-            )}
+            {resolvedTheme === 'dark' ? <MoonStar strokeWidth={1.5} size={22} /> : <Sun strokeWidth={1.5} size={22} />}
           </Menu.Button>
         </div>
         <Transition
